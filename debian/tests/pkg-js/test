@@ -1,0 +1,1 @@
+NODE_PATH=debian/tests/test_modules tape `ls tests/test-*.js|grep -v -f debian/tests/excluded`

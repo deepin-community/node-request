@@ -1,0 +1,8 @@
+tests/test-agentOptions.js
+tests/test-httpModule.js
+tests/test-https.js
+tests/test-redirect-auth.js
+test-redirect-complex.js
+tests/test-redirect.js
+tests/test-tunnel.js
+tests/test-localAddress.js

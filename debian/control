@@ -1,0 +1,75 @@
+Source: node-request
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Jérémy Lal <kapouer@melix.org>,
+ Pirate Praveen <praveen@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 12),
+ node-aws-sign2 <!nocheck>,
+ node-aws4 <!nocheck>,
+ node-bluebird <!nocheck>,
+ node-buffer-equal <!nocheck>,
+ node-caseless <!nocheck>,
+ node-combined-stream (>= 1.0.6~) <!nocheck>,
+ node-extend (>= 3.0.2~) <!nocheck>,
+ node-forever-agent (>= 0.6.1~) <!nocheck>,
+ node-form-data (>= 2.3.2~) <!nocheck>,
+ node-har-validator <!nocheck>,
+ node-http-signature <!nocheck>,
+ node-is-typedarray <!nocheck>,
+ node-isstream <!nocheck>,
+ node-json-stringify-safe (>= 5.0.1~) <!nocheck>,
+ node-mime-types (>= 2.1.19~) <!nocheck>,
+ node-oauth-sign (>= 0.9~) <!nocheck>,
+ node-performance-now <!nocheck>,
+ node-qs (>= 6.5.2~) <!nocheck>,
+ node-rimraf <!nocheck>,
+ node-safe-buffer <!nocheck>,
+ node-tape <!nocheck>,
+ node-tough-cookie <!nocheck>,
+ node-tunnel-agent (>= 0.6~) <!nocheck>,
+ node-uuid <!nocheck>,
+ pkg-js-tools (>= 0.9.20~)
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-request
+Vcs-Git: https://salsa.debian.org/js-team/node-request.git
+Homepage: https://github.com/mikeal/request
+Rules-Requires-Root: no
+
+Package: node-request
+Architecture: all
+Depends:
+ ${misc:Depends},
+ nodejs,
+ node-aws-sign2,
+ node-aws4,
+ node-caseless,
+ node-combined-stream (>= 1.0.6~),
+ node-extend (>= 3.0.2~),
+ node-forever-agent (>= 0.6.1~),
+ node-form-data (>= 2.3.2~),
+ node-har-validator,
+ node-http-signature,
+ node-is-typedarray,
+ node-isstream,
+ node-json-stringify-safe (>= 5.0.1~),
+ node-mime-types (>= 2.1.19~),
+ node-oauth-sign (>= 0.9~),
+ node-performance-now,
+ node-qs (>= 6.5.2~),
+ node-safe-buffer,
+ node-tough-cookie,
+ node-tunnel-agent (>= 0.6~),
+ node-uuid
+Description: simplified HTTP request client module for Node.js
+ node-request is an HTTP client with a simple API and a lot of features:
+  * streaming response
+  * multipart form upload
+  * HTTP auth
+  * OAuth signing
+  * Proxy
+ Some features are available as suggested Node.js modules.
+ .
+ Node.js is an event-based server-side javascript engine.

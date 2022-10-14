@@ -1,0 +1,34 @@
+Adapt for node-uuid 8.x
+
+--- a/lib/auth.js
++++ b/lib/auth.js
+@@ -1,7 +1,7 @@
+ 'use strict'
+ 
+ var caseless = require('caseless')
+-var uuid = require('uuid/v4')
++const { v4: uuid } = require('uuid')
+ var helpers = require('./helpers')
+ 
+ var md5 = helpers.md5
+--- a/lib/multipart.js
++++ b/lib/multipart.js
+@@ -1,6 +1,6 @@
+ 'use strict'
+ 
+-var uuid = require('uuid/v4')
++const { v4: uuid } = require('uuid')
+ var CombinedStream = require('combined-stream')
+ var isstream = require('isstream')
+ var Buffer = require('safe-buffer').Buffer
+--- a/lib/oauth.js
++++ b/lib/oauth.js
+@@ -3,7 +3,7 @@
+ var url = require('url')
+ var qs = require('qs')
+ var caseless = require('caseless')
+-var uuid = require('uuid/v4')
++const { v4: uuid } = require('uuid')
+ var oauth = require('oauth-sign')
+ var crypto = require('crypto')
+ var Buffer = require('safe-buffer').Buffer

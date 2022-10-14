@@ -1,0 +1,119 @@
+Description: disable tests that require network
+Author: Xavier Guimard <yadd@debian.org>
+Bug-Debian: https://bugs.debian.org/956385
+Forwarded: not-needed
+Last-Update: 2020-04-10
+
+--- a/tests/test-proxy.js
++++ b/tests/test-proxy.js
+@@ -121,6 +121,7 @@
+       env: { http_proxy: s.url }
+     }, true)
+ 
++    /*
+     runTest('HTTPS_PROXY environment variable and http: url', {
+       env: { HTTPS_PROXY: s.url }
+     }, false)
+@@ -128,6 +129,7 @@
+     runTest('https_proxy environment variable and http: url', {
+       env: { https_proxy: s.url }
+     }, false)
++    */
+ 
+     // https: urls and basic proxy settings
+ 
+@@ -167,6 +169,7 @@
+ 
+     // no_proxy logic
+ 
++    /*
+     runTest('NO_PROXY hostnames are case insensitive', {
+       env: {
+         HTTP_PROXY: s.url,
+@@ -187,12 +190,14 @@
+         no_proxy: 'GOOGLE.COM'
+       }
+     }, false)
++    */
+ 
+     runTest('NO_PROXY ignored with explicit proxy passed', {
+       env: { NO_PROXY: '*' },
+       proxy: s.url
+     }, true)
+ 
++    /*
+     runTest('NO_PROXY overrides HTTP_PROXY for specific hostname', {
+       env: {
+         HTTP_PROXY: s.url,
+@@ -206,6 +211,7 @@
+         no_proxy: 'google.com'
+       }
+     }, false)
++    */
+ 
+     runTest('NO_PROXY does not override HTTP_PROXY if no hostnames match', {
+       env: {
+@@ -214,6 +220,7 @@
+       }
+     }, true)
+ 
++    /*
+     runTest('NO_PROXY overrides HTTP_PROXY if a hostname matches', {
+       env: {
+         HTTP_PROXY: s.url,
+@@ -227,6 +234,7 @@
+         NO_PROXY: 'google.com:80'
+       }
+     }, false)
++    */
+ 
+     runTest('NO_PROXY only overrides HTTP_PROXY if the port matches', {
+       env: {
+@@ -235,6 +243,7 @@
+       }
+     }, true)
+ 
++    /*
+     runTest('NO_PROXY=* should override HTTP_PROXY for all hosts', {
+       env: {
+         HTTP_PROXY: s.url,
+@@ -263,6 +272,7 @@
+         NO_PROXY: 'oogle.com:80'
+       }
+     }, true)
++    */
+ 
+     // misc
+ 
+@@ -275,11 +285,13 @@
+       }
+     }, true)
+ 
++    /*
+     runTest('proxy: null should override HTTP_PROXY', {
+       env: { HTTP_PROXY: s.url },
+       proxy: null,
+       timeout: 500
+     }, false)
++    */
+ 
+     runTest('uri auth without proxy auth', {
+       url: 'http://user:pass@google.com',
+--- a/tests/test-timeout.js
++++ b/tests/test-timeout.js
+@@ -159,6 +159,7 @@
+   ++nrIndex
+   return ip
+ }
++/*
+ tape('connect timeout', function tryConnect (t) {
+   var tarpitHost = 'http://' + getNonRoutable()
+   var shouldConnectTimeout = {
+@@ -183,6 +184,7 @@
+     socket = socket_
+   })
+ })
++*/
+ 
+ tape('connect timeout with non-timeout error', function tryConnect (t) {
+   var tarpitHost = 'http://' + getNonRoutable()
